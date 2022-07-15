@@ -19,12 +19,6 @@ For managing AllowList
 but it will not take effect in the game.
 This means the player you added won't be able to join the game until reloading</para></example></summary>
         </member>
-        <member name="M:MC.Level.GetPlayer(MC.ActorUniqueID)">
-UniqueID
-</member>
-        <member name="M:MC.Level.GetPlayer(System.String)">
-name or xuid
-</member>
         <member name="M:LLNET.RemoteCall.DynamicRemoteCallAPI.ImportAs``1(System.String,System.String)">
             <summary>
 Will cause memory leak.　QAQ
@@ -407,6 +401,56 @@ Provides registration info for a command class.
 unique_ptr&lt;std::string&gt;
 </summary>
         </member>
+        <member name="M:CommandOutput.setLanguageCode(CommandOrigin!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+@brief Set the output language code of this CommandOutput object(convenience func).
+
+@param ori  The command origin object for the CommandOutput object
+
+</member>
+        <member name="M:CommandOutput.setLanguageCode(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+@brief Set the output language code of this CommandOutput object.
+
+@param code  The language code
+
+</member>
+        <member name="M:CommandOutput.error(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+ @brief Output a success message(without I18N).
+
+ @param str  The message
+
+</member>
+        <member name="M:CommandOutput.success(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+ @brief Output a success message(without I18N).
+
+ @param str  The message
+
+</member>
+        <member name="M:CommandOutput.addMessage(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+@brief Output a message(without I18N).
+
+@param str  The message
+
+</member>
+        <member name="M:MC.Level.GetPlayer(System.ValueType!MC.ActorUniqueID!System.Runtime.CompilerServices.IsBoxed)">
+UniqueID
+</member>
+        <member name="M:MC.Level.GetPlayer(System.String)">
+name or xuid
+</member>
+        <member name="M:MC.BoundingBox.ForEachBlockInBox_pFunc(=FUNC:System.Void(MC.BlockPos!System.Runtime.CompilerServices.IsConst@))">
+            <summary>
+More Faster
+</summary>
+            <param name="pfunc">Function Pointer</param>
+        </member>
+        <member name="T:seh_exception">
+@Description: a class for convert SEH exception to c++ exception
+@Author: shang_cm
+@Date: 2020-06-01 16:09:00
+@LastEditTime: 2010-06-01 16:09:00
+@LastEditors: shang_cm
+
+</member>
         <member name="M:LLNET.RemoteCall.Valuetype.#ctor(System.Collections.Generic.Dictionary`2{System.String,LLNET.RemoteCall.Valuetype})">
             <summary>
 Initializes a new instance of the RemoteCall.Valuetype class to the value
@@ -463,14 +507,6 @@ Copy
 </summary>
             <param name="val" />
         </member>
-        <member name="T:seh_exception">
-@Description: a class for convert SEH exception to c++ exception
-@Author: shang_cm
-@Date: 2020-06-01 16:09:00
-@LastEditTime: 2010-06-01 16:09:00
-@LastEditors: shang_cm
-
-</member>
         <member name="M:MC.Player.OnSizeUpdated">
             <summary>
                 <para>*265*/ virtual void readAdditionalSaveData(class CompoundTag const&amp;, class DataLoadHelper&amp;);</para>
@@ -621,15 +657,136 @@ Dimension id
 <para /><para>dimid:</para><para>0 : OverWorld</para><para>1 : The Nether</para><para>2 : The End</para></param>
             <returns>A instance of the MC.BlockInstance</returns>
         </member>
+        <member name="M:Translation.loadFrom(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+@brief Load translation from another plugin.
+
+@param  plugin  The plugin name.
+@return I18N*   The pointer to the I18N object in PluginOwnData, null if failed
+
+</member>
+        <member name="M:Translation.load(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.map&lt;std.basic_string&lt;System.SByte!System.Runtime.Compile">
+ @brief Load translation from a file.
+
+ @param  filePath         The path to the i18n file(json)
+ @param  defaultLangCode  The default language code(if no lang code is specified, it will use this)
+ @param  defaultLangData  The default translation data
+ @return I18N*            The pointer to the I18N object in PluginOwnData, null if failed
+
+</member>
+        <member name="M:I18N.get(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+ @brief Get the translation of the specified key.
+
+ @param  key          The language key
+ @param  langCode     The language code like en_US,zh_CN("" =&gt; this-&gt;defaultLangCode)
+ @return std::string  The translation
+ @see    I18N::defaultLangCode
+
+</member>
+        <member name="M:I18N.#ctor(I18N!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+Copy constructor
+</member>
+        <member name="M:I18N.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.map&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServi">
+ @brief Construct a I18N object.
+
+ @param filePath         The path to the i18n file(json)
+ @param defaultLangCode  The default language code(if no lang code is specified, it will use this)
+ @param defaultLangData  The default translation data
+ @param hModule          The plugin handler(to set PluginOwnData)
+ @note  This constructor must be defined in header
+
+</member>
+        <member name="T:I18N">
+ @brief I18N API class.
+
+
+</member>
+        <member name="T:LL.ServerStatus">
+Server Status
+</member>
+        <member name="M:LL.getLoaderHandle">
+@breif Get the handle of LiteLoader.dll.
+
+@return HMODULE  The handle
+
+</member>
+        <member name="M:LL.hasPlugin(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+@brief Get whether the plugin is loaded
+
+@param  name  The name of the plugin
+@return bool  True if the plugin is loaded
+
+</member>
+        <member name="M:LL.getPlugin(HINSTANCE__*)">
+@brief Get a loaded plugin by HMODULE handle
+
+@param  name         The name of the plugin
+@return LL::Plugin*  The plugin(nullptr if not found)
+
+</member>
+        <member name="M:LL.getPlugin(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+@brief Get a loaded plugin by name
+
+@param  name         The name of the plugin
+@return LL::Plugin*  The plugin(nullptr if not found)
+
+</member>
+        <member name="M:LL.registerPlugin(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,LL.Version,std.map&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUns">
+@brief Register a plugin
+
+@param  name     The name of the plugin
+@param  desc     The descirption(introduction) of the plugin
+@param  version  The version of the plugin(LL::Version)
+@param  others   The other information of the plugin(key-value)
+@return bool     True if the plugin is registered successfully
+@note   The implementation of this function must be in header file(because of `GetCurrentModule`)
+
+@par Example
+@code
+LL::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
+@endcode
+
+</member>
+        <member name="M:LL.registerPlugin(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,LL.Version,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecified">
+@brief Register a plugin
+
+@param  name     The name of the plugin
+@param  desc     The description(introduction) of the plugin
+@param  version  The version of the plugin(LL::Version)
+@param  git      The git information of the plugin
+@param  license  The license of the plugin
+@param  website  The website
+@return bool     True if the plugin is registered successfully
+@note   The implementation of this function must be in header file(because of `GetCurrentModule`)
+
+</member>
+        <member name="M:LL.getDataPath(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+@brief Get the data path of the plugin
+
+@param  pluginName   The name of the plugin
+@return std::string  The data path of the plugin
+
+</member>
+        <member name="M:LL.isDebugMode">
+@brief Get whether LiteLoader is in debug mode
+
+@return bool  True if it is in debug mode
+
+</member>
+        <member name="M:LL.getLoaderVersion">
+@brief Get the loader version as a Version object
+
+@return LL::Version  The loader version
+
+</member>
+        <member name="M:LL.getLoaderVersionString">
+ @brief Get the loader version as a string
+
+ @return std::string  The loader version
+
+</member>
         <member name="F:numberOfCommentPlacement">
 root value)
 </member>
-        <member name="M:MC.BoundingBox.ForEachBlockInBox_pFunc(=FUNC:System.Void(MC.BlockPos!System.Runtime.CompilerServices.IsConst@))">
-            <summary>
-More Faster
-</summary>
-            <param name="pfunc">Function Pointer</param>
-        </member>
         <member name="M:&quot;&quot;_json_pointer(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,System.UInt64)">
 @brief user-defined string literal for JSON pointer
 @sa https://json.nlohmann.me/api/basic_json/operator_literal_json_pointer/
@@ -734,8 +891,8 @@ the total number of characters read
         <member name="T:nlohmann.detail.position_t">
 struct to capture the start position of the current token
 </member>
-        <member name="T:clix.Encoding">
-            <summary>Encoding types for strings</summary>
+        <member name="T:clix.CLI_Encoding">
+            <summary>CLI_Encoding types for strings</summary>
         </member>
         <member name="F:E_UTF16">
             <summary>UTF-16 encoding</summary>
@@ -1684,8 +1841,12 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1694,6 +1855,8 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1710,6 +1873,8 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1720,16 +1885,30 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1750,6 +1929,8 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1766,16 +1947,24 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1788,6 +1977,8 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1800,6 +1991,8 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1810,20 +2003,30 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
@@ -1836,8 +2039,12 @@ Internal details not to be documented.
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:LL.getAllPlugins”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:Translation.getI18N(HINSTANCE__*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“M:fmt.v8.format_system_error(fmt.v8.detail.buffer<System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte>*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)”的格式错误的 XML 文档注释。-->
         <!-- 丢弃成员“T:entt.dispatcher”的格式错误的 XML 文档注释。-->
